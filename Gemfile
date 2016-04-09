@@ -35,6 +35,9 @@ gem 'bson_ext'
 gem 'devise', '~> 3.5.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form', '~> 3.2.1'
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
+gem 'refile-mongoid', github: 'fbacall/refile-mongoid'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

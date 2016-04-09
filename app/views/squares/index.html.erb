@@ -1,0 +1,10 @@
+<h1>Listing Squares</h1>
+
+<div class="squares-container">
+  <%= render partial: 'square', collection: @squares %>
+</div>
+
+<br>
+
+<%= link_to 'New Text Square', new_square_path(type: 'text') %>
+<%= link_to 'New Image Square', new_square_path(type: 'image') %>

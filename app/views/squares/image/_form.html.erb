@@ -1,0 +1,12 @@
+<%= simple_form_for(@square) do |f| %>
+    <%= f.error_notification %>
+    <%= hidden_field_tag(:type, params[:type]) %>
+
+    <div class="form-inputs">
+      <%= f.attachment_field :image %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>

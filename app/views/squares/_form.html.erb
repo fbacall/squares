@@ -1,0 +1,5 @@
+<% if params[:type] == 'text' %>
+    <%= render 'squares/text/form' %>
+<% elsif params[:type] == 'image' %>
+    <%= render 'squares/image/form' %>
+<% end %>
