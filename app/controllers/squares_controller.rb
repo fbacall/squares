@@ -4,7 +4,7 @@ class SquaresController < ApplicationController
   # GET /squares
   # GET /squares.json
   def index
-    @squares = Square.all
+    @squares = Square.order('created_at DESC').all
   end
 
   # GET /squares/1
@@ -28,7 +28,7 @@ class SquaresController < ApplicationController
 
     respond_to do |format|
       if @square.save
-        format.html { redirect_to @square, notice: 'Square was successfully created.' }
+        format.html { redirect_to squares_path, notice: 'Square was successfully created.' }
         format.json { render :show, status: :created, location: @square }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SquaresController < ApplicationController
   def update
     respond_to do |format|
       if @square.update(square_params)
-        format.html { redirect_to @square, notice: 'Square was successfully updated.' }
+        format.html { redirect_to squares_path, notice: 'Square was successfully updated.' }
         format.json { render :show, status: :ok, location: @square }
       else
         format.html { render :edit }

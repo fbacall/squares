@@ -1,8 +1,8 @@
-<div class="square <%="#{square.type}-square"-%>">
+<div class="square <%="#{square.type}-square"-%> variant<%= rand(6)+1 -%>">
   <%= render partial: "squares/#{square.type}/square", object: square %>
 
   <div class="controls">
-    <%= link_to edit_square_path(square) do %>
+    <%= link_to edit_square_path(square, type: square.type) do %>
         <span class="glyphicon glyphicon-pencil" title="Edit" aria-hidden="true"></span>
     <% end %>
     <%= link_to square, method: :delete, data: { confirm: 'Are you sure?' } do %>

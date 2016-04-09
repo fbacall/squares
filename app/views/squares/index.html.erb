@@ -1,10 +1,25 @@
-<h1>Listing Squares</h1>
-
 <div class="squares-container">
+  <%= link_to '#', class: 'new-square-button', data: { toggle: 'modal', target: '#new-square-modal'} do %>
+      <span class="glyphicon glyphicon-plus" title="New Image Square" aria-hidden="true"></span>
+  <% end %>
+
+  <div class="modal fade" id="new-square-modal" tabindex="-1" role="dialog" aria-labelledby="new-square-modal-label">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="new-square-modal-label">New Square</h4>
+        </div>
+        <div class="modal-body squares-container">
+          <%= link_to new_square_path(type: 'text'), class: 'new-square-button' do %>
+              <span class="glyphicon glyphicon-font" title="New Text Square" aria-hidden="true"></span>
+          <% end %>
+          <%= link_to new_square_path(type: 'image'), class: 'new-square-button' do %>
+              <span class="glyphicon glyphicon-picture" title="New Image Square" aria-hidden="true"></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
   <%= render partial: 'square', collection: @squares %>
 </div>
-
-<br>
-
-<%= link_to 'New Text Square', new_square_path(type: 'text') %>
-<%= link_to 'New Image Square', new_square_path(type: 'image') %>

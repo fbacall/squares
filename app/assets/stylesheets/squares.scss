@@ -2,13 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$square-size: 300px;
+
 .squares-container {
-  overflow: auto;
+  @include clearfix;
+  @include square-bg(4800px);
 }
 
 .square {
-  width: 300px;
-  height: 300px;
+  width: $square-size;
+  height: $square-size;
   padding: 0;
   background: #eee;
   position: relative;
@@ -16,7 +19,7 @@
   float: left;
 
   .controls {
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.8);
     position: absolute;
     bottom: 0;
     right: 0;
@@ -28,3 +31,27 @@
   padding: 30px;
   font-size: 14px;
 }
+
+.new-square-button {
+  width: $square-size;
+  height: $square-size;
+  line-height: $square-size;
+  text-align: center;
+  font-size: 60px;
+  display: block;
+  float: left;
+  background: #eee;
+  color: #888;
+
+  &:hover {
+    background: #f9f9f9;
+    color: #333;
+  }
+}
+
+.variant1 { background-color: rgba(0,0,0,0.5); color: white; }
+.variant2 { background-color: rgba(0,0,0,0.8); color: white; }
+.variant3 { background-color: rgba(0,0,0,0.9); color: white; }
+.variant4 { background-color: rgba(255,255,255,0.5); }
+.variant5 { background-color: rgba(255,255,255,0.8); }
+.variant6 { background-color: rgba(255,255,255,0.9); }

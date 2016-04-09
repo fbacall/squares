@@ -11,7 +11,29 @@
  * file per style scope.
  */
 
-@import "tweaks";
+@import 'tweaks';
 @import 'bootstrap-sprockets';
-@import "bootstrap";
-@import "squares";
+@import 'bootstrap';
+@import 'mixins';
+@import 'squares';
+
+#content {
+  background: white;
+}
+
+.container-fluid {
+  max-width: 1230px;
+}
+
+.navbar {
+  margin-bottom: 0;
+  font-family: 'Nova Square', monospace;
+  
+  .logo {
+    width: 20px;
+    height: 20px;
+    @include square-bg(160px);
+    float: left;
+    margin-right: 10px;
+  }
+}
