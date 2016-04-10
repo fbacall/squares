@@ -1,18 +1,20 @@
 <div class="squares-container">
-  <div class="new-square-button-container">
-    <%= link_to new_square_path(type: 'text'), class: 'new-square-button' do %>
-        <span class="glyphicon glyphicon-font" title="New Text Square" aria-hidden="true"></span>
-    <% end %>
-    <%= link_to new_square_path(type: 'image'), class: 'new-square-button' do %>
-        <span class="glyphicon glyphicon-picture" title="New Image Square" aria-hidden="true"></span>
-    <% end %>
-    <%= link_to '#', class: 'new-square-button disabled' do %>
-        <span class="glyphicon glyphicon-film" title="New Text Square" aria-hidden="true"></span>
-    <% end %>
-    <%= link_to '#', class: 'new-square-button disabled' do %>
-        <span class="glyphicon glyphicon-heart" title="New Image Square" aria-hidden="true"></span>
-    <% end %>
-  </div>
+  <% if user_signed_in? %>
+      <div class="new-square-button-container">
+        <%= link_to new_square_path(type: 'text'), class: 'new-square-button' do %>
+            <span class="glyphicon glyphicon-font" title="New Text Square" aria-hidden="true"></span>
+        <% end %>
+        <%= link_to new_square_path(type: 'image'), class: 'new-square-button' do %>
+            <span class="glyphicon glyphicon-picture" title="New Image Square" aria-hidden="true"></span>
+        <% end %>
+        <%= link_to '#', class: 'new-square-button disabled' do %>
+            <span class="glyphicon glyphicon-film" title="New Text Square" aria-hidden="true"></span>
+        <% end %>
+        <%= link_to '#', class: 'new-square-button disabled' do %>
+            <span class="glyphicon glyphicon-heart" title="New Image Square" aria-hidden="true"></span>
+        <% end %>
+      </div>
+  <% end %>
 
   <%= render partial: 'square', collection: @squares %>
 </div>

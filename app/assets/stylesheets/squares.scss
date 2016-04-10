@@ -50,9 +50,12 @@
   }
 }
 
-.variant1 { background-color: rgba(0,0,0,0.5); color: white; }
-.variant2 { background-color: rgba(0,0,0,0.8); color: white; }
-.variant3 { background-color: rgba(0,0,0,0.9); color: white; }
-.variant4 { background-color: rgba(255,255,255,0.5); }
-.variant5 { background-color: rgba(255,255,255,0.8); }
-.variant6 { background-color: rgba(255,255,255,0.9); }
+.square.size-1 { width: $square-size; }
+.square.size-2 { width: $square-size * 2; }
+
+.variant-1 { background-color: #000; color: white; }
+.variant-2 { background-color: #002; color: white; }
+.variant-3 { background-color: #023; color: white; }
+.variant-4 { background-color: #ffc; }
+.variant-5 { background-color: #cfc; }
+.variant-6 { background-color: #9fc; }

@@ -83,9 +83,9 @@ class SquaresController < ApplicationController
   def square_params
     case square_class
       when TextSquare
-        p = params.require(:text_square).permit(:text, :user_id)
+        p = params.require(:text_square).permit(:text, :user_id, :size)
       when ImageSquare
-        p = params.require(:image_square).permit(:image, :user_id)
+        p = params.require(:image_square).permit(:image, :user_id, :size)
     end
 
     p.merge(user_id: current_user.id)

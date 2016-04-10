@@ -1,5 +1,18 @@
-<% if params[:type] == 'text' %>
-    <%= render 'squares/text/form' %>
-<% elsif params[:type] == 'image' %>
-    <%= render 'squares/image/form' %>
+<%= simple_form_for(@square) do |f| %>
+    <%= f.error_notification %>
+    <%= hidden_field_tag(:type, params[:type]) %>
+
+    <div class="form-inputs">
+      <% if params[:type] == 'text' %>
+          <%= render partial: 'squares/text/fields', locals: { f: f } %>
+      <% elsif params[:type] == 'image' %>
+          <%= render partial: 'squares/image/fields', locals: { f: f } %>
+      <% end %>
+
+      <%= f.input :size, collection: 1..2, default: 1 %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
 <% end %>

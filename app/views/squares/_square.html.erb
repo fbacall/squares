@@ -1,4 +1,4 @@
-<div class="square <%="#{square.type}-square"-%> variant<%= rand(6)+1 -%>">
+<div class="square <%="#{square.type}-square"-%> variant-<%= rand(6)+1 -%> size-<%= square.size -%>">
   <%= render partial: "squares/#{square.type}/square", object: square %>
 
   <div class="controls">
