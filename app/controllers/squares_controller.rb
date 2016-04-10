@@ -1,5 +1,6 @@
 class SquaresController < ApplicationController
   before_action :set_square, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index]
 
   # GET /squares
   # GET /squares.json
@@ -82,10 +83,11 @@ class SquaresController < ApplicationController
   def square_params
     case square_class
       when TextSquare
-        params.require(:text_square).permit(:text)
+        p = params.require(:text_square).permit(:text, :user_id)
       when ImageSquare
-        params.require(:image_square).permit(:image)
+        p = params.require(:image_square).permit(:image, :user_id)
     end
 
+    p.merge(user_id: current_user.id)
   end
 end
