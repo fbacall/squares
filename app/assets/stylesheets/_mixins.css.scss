@@ -1,6 +1,8 @@
-@mixin square-bg($size) {
+$square-size: 300px;
+
+@mixin square-bg($level) {
   background-image: url('randbg.png');
-  background-size: $size;
+  background-size: (16 * $square-size) / $level;
   image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
   image-rendering: -moz-crisp-edges;          /* Firefox                        */
   image-rendering: -o-crisp-edges;            /* Opera                          */
@@ -8,4 +10,11 @@
   image-rendering: pixelated; /* Chrome */
   image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
   -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
+
+@mixin square($level) {
+  width: $square-size / $level;
+  height: $square-size / $level;
+  display: block;
+  float: left;
 }

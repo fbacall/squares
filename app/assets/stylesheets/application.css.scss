@@ -32,8 +32,12 @@
   .logo {
     width: 20px;
     height: 20px;
-    @include square-bg(160px);
+    @include square-bg(30);
     float: left;
     margin-right: 10px;
   }
+}
+
+.disabled {
+  cursor: not-allowed;
 }
